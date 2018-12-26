@@ -15,6 +15,8 @@ public class ComService {
 
 	List<DataVO> dvList;
 	List<InfoVO> ifList;
+	DataVO dvo;
+	InfoVO ivo;
 
 	public ComService() {
 		dvList = new ArrayList();
@@ -99,15 +101,14 @@ public class ComService {
 			pw = new PrintWriter(newFile);
 
 			for (DataVO dvo : dvList) {
-				for (InfoVO ivo : ifList) {
-					if (Integer.valueOf(dvo.getStrHow()) == 1) {
-						pw.printf("%s:%s:%s:%s:%d:%d:%d:%d\n", dvo.getStrDate(), "매입", dvo.getBarCode(), ivo.getpName(),
-								dvo.getIntPrice(), dvo.getIntQuan(), dvo.getIntPrice() * dvo.getIntQuan(), 0);
 
-					} else {
-						pw.printf("%s:%s:%s:%s:%d:%d:%d:%d\n", dvo.getStrDate(), "매출", dvo.getBarCode(), ivo.getpName(),
-								dvo.getIntPrice(), dvo.getIntQuan(), 0, dvo.getIntPrice() * dvo.getIntQuan());
-					}
+				if (dvo.getStrHow().equals("1")) {
+					pw.printf("%s:%s:%s:%s:%d:%d:%d:%d\n", dvo.getStrDate(), "매입", dvo.getBarCode(), ivo.getpName(),
+							dvo.getIntPrice(), dvo.getIntQuan(), dvo.getIntPrice() * dvo.getIntQuan(), 0);
+
+				} else {
+					pw.printf("%s:%s:%s:%s:%d:%d:%d:%d\n", dvo.getStrDate(), "매출", dvo.getBarCode(), ivo.getpName(),
+							dvo.getIntPrice(), dvo.getIntQuan(), 0, dvo.getIntPrice() * dvo.getIntQuan());
 				}
 			}
 

@@ -7,6 +7,8 @@ public class DataVO {
 	private String strHow ; // 거래구분
 	private int intPrice ;
 	private int intQuan ;
+	
+	
 	public String getStrDate() {
 		return strDate;
 	}
@@ -37,6 +39,7 @@ public class DataVO {
 	public void setIntQuan(int intQuan) {
 		this.intQuan = intQuan;
 	}
+	
 	@Override
 	public String toString() {
 		return "DataVO [strDate=" + strDate + ", barCode=" + barCode + ", strHow=" + strHow + ", intPrice=" + intPrice
