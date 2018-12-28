@@ -1,7 +1,12 @@
 package com.biz.commerce.vo;
-
+/*
+ * 상품정보 파일의 데이터를 저장할 vo선언
+ */
 public class InfoVO {
-
+	/*
+	 * 상품정보의 각 요소를 저장할 member변수선언
+	 * 은닉, 캡슐화를 위해 private 선언
+	 */
 	private String barCode ;
 	private String pName ; // 상품명
 	private String tax ;
@@ -10,6 +15,9 @@ public class InfoVO {
 	private String index ; // 품목
 	private String cPart ; // 거래처
 	
+	/*
+	 * 멤버변수에 접근해서 작업할 getter setter 선언
+	 */
 	public String getBarCode() {
 		return barCode;
 	}
@@ -52,6 +60,7 @@ public class InfoVO {
 	public void setcPart(String cPart) {
 		this.cPart = cPart;
 	}
+	
 	@Override
 	public String toString() {
 		return "ComVO [barCode=" + barCode + ", pName=" + pName + ", tax=" + tax + ", iPrice=" + iPrice + ", oPrice="
